@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappings xmlns="http://dozer.sourceforge.net"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://dozer.sourceforge.net
+          http://dozer.sourceforge.net/schema/beanmapping.xsd">
+    <mapping type="bi-directional" date-format="yyyyMMdd" wildcard="true">
+        <class-a>com.codeinvestigator.demodozer.spacestation.HumanSpaceStation</class-a>
+        <class-b>com.codeinvestigator.demodozer.spacestation.AlienSpaceStation</class-b>
+        <field custom-converter="com.codeinvestigator.demodozer.spacestation.MyAlienNameConverter">
+            <a>name</a>
+            <b get-method="getTheNamePlease" set-method="setTheNamePlease">name</b>
+        </field>
+        <field>
+            <a>lazer.model</a>
+            <b>weapon</b>
+        </field>
+        <field>
+            <a>lastService</a>
+            <b>serviceDate</b>
+        </field>
+        <field>
+            <a>crewmembers[0]</a>
+            <b>captain</b>
+        </field>
+        <field>
+            <a>boxcontent</a>
+            <b key="TheContentOfTheHumanBox">inventory</b>
+        </field>
+    </mapping>
+</mappings>
